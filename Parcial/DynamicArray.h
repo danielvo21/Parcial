@@ -20,7 +20,7 @@ public: DynamicArray() : data(NULL), allocated_memory(0), num_elements(0){}
 			return data[index];
 		};
 
-		void reallocate(int new_mem_size){
+		void reallocate(unsigned int new_mem_size){
 
 			TYPE tmp = data;
 
@@ -33,38 +33,49 @@ public: DynamicArray() : data(NULL), allocated_memory(0), num_elements(0){}
 				{
 					data[i] = tmp[i];
 				}
+				delete[] tmp;
 				allocated_memory = num_elements = new_mem_size;
 				
 			}
 		};
-			/*
-			for (int i = 0; i < new_mem_size; i++)
-			{
-				resized[i] = arr[i];
 
-			}
-			num_elements = allocated_memory = new_mem_size;
-			arr = resized;
-			delete[] resized;
-			};
-	*/
-/*
-		void pushBack(int new_data){
+		void pushBack(TYPE new_data){
 			if (allocated_memory == num_elements) reallocate(num_elements + 1);
+			
 			data[num_elements]=new_data;
 			num_elements++;
 		};
 
 		int pop(){
-			if (num_elements>0) num_elements--;
+			if (num_elements > 0){
+				num_elements =- 1;
+				reallocate(num_elements);
+			}
 		};
-		
-		
-		void insert(int value, unsigned int pos){
-		
-		
+		void insert(TYPE new_data, unsigned int pos){
+			assert(pos<num_elements);
+
+			if (pos == num_elements){ pushBack(new_data); }
+
+			if (num_elements + 1 > allocated_memory){ reallocate(num_elements + 1); 
+
+			for (int i = num_elements; i > pos; i--)
+			{
+				data[i] = data[i-1]
+			}
+			data[pos] = new_data;
+			num_elements = +1;
+			}
 		};
-*/
+
+		void clear()
+		{
+			num_elements = 0;
+		}
+		
+		
+		
+/**/
 
 };
 
