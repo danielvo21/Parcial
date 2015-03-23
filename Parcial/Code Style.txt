@@ -1,0 +1,18 @@
+Daniel Vaquier Ocaña
+Code Style
+
+camelCase
+PascalCase
+snake_case
+
+FileName: PascalCase
+          Example: PointClass.cpp
+
+Class: PascalCase
+       Example: PointXY;
+
+Method: camelCase
+		Example: pointMove();
+
+Atribute: snake_case
+          Example: x_p;
