@@ -28,7 +28,7 @@ public:
 		//delAll()
 	};
 
-	void add(int _value){
+	void pushBack(int _value){
 		node<D>* new_node = new node <D>;
 		new_node->D = _value;
 		new_node->next = NULL;
@@ -43,21 +43,39 @@ public:
 				tmp = tmp->next;
 			}
 			tmp->next = new_node;
-		};
-
-		
-		
-		
-		
-		
+		}
 		}
 
+	void delAll(){ 
+	
+		node<D>* tmp = start;
 
+		if (start == NULL){  }
 
-
-
+		else{
+			while (tmp != NULL)
+			{
+				node<D>*  tmp2 = tmp;
+				tmp = tmp->next;
+				delete tmp2;	´
+			}
+		}
 
 	};
+
+	void delNode(){ ´ };
+
+	void 
+	
+	
+	}
+
+
+
+
+
+
+};
 
 
 #endif

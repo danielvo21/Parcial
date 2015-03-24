@@ -73,9 +73,6 @@ public: DynamicArray() : data(NULL), allocated_memory(0), num_elements(0){}
 			num_elements = 0;
 		}
 		
-		
-		
-/**/
 
 };
 
