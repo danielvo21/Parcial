@@ -20,6 +20,13 @@ public: DynamicArray() : data(NULL), allocated_memory(0), num_elements(0){}
 			return data[index];
 		};
 
+		TYPE& operator[](unsigned int index)
+		{
+			assert(index < num_elements);
+			return data[index];
+		}
+
+
 		void reallocate(unsigned int new_mem_size){
 
 			TYPE tmp = data;
