@@ -68,5 +68,27 @@ public:
 		return num_elements;
 	}
 
+private:
+
+	// Private Utils
+	void Alloc(unsigned int mem)
+	{
+		VALUE* tmp = data;
+
+		mem_capacity = mem;
+		data = new VALUE[mem_capacity];
+
+		if (num_elements > mem_capacity)
+			num_elements = mem_capacity;
+
+		if (tmp != NULL)
+		{
+			for (unsigned int i = 0; i < num_elements; ++i)
+				data[i] = tmp[i];
+
+			delete[] tmp;
+		}
+	}
+};
 
 #endif

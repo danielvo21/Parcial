@@ -4,6 +4,7 @@
 #include "../p2Point.h"
 #include "../p2SString.h"
 #include "../p2List.h"
+#include "../Stack.h"
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
@@ -247,5 +248,31 @@ namespace UnitTest
 			mylist.clear();
 			Assert::AreEqual((int)mylist.count(), 0);
 		}
+
+		//Stack---------------------------------------------------
+
+		TEST_METHOD(StackPush)
+		{
+			Stack<int> A;
+			A.Push(1);
+			A.Push(2);
+			A.Push(3);
+			Assert::AreEqual(A[0], 1);
+			Assert::AreEqual(A[1], 2);
+			Assert::AreEqual(A[2], 3);
+		}
+		/*
+		TEST_METHOD(StackPop)
+		{
+			Stack<int> A;
+			A.Pop(1);
+			A.Pop(2);
+			A.Pop(3);
+			Assert::AreEqual(A[0], 1);
+			Assert::AreEqual(A[1], 2);
+			Assert::AreEqual(A[2], 3);
+		}*/
+
+
 	};
 }
